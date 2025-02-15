@@ -18,8 +18,41 @@
 </head>
 <body>
     <div class="overflow-x-hidden overflow-y-auto">
-        <!-- Nav bar This uses the navbar stlye from include/nav/indexnav -->
-        <?php require("include/nav/indexnav.php"); ?>
+        <!-- Nav bar -->
+
+        <nav class="navbar navbar-expand-lg navbar-light justify fixed-top">
+            <div class="container">
+                <img src="./asset/image/WhatsApp_Image_2024-12-11_at_1.48.46_PM-removebg-preview.png" alt="" width="50px">
+                <a class="navbar-brand text-danger fs-4 fw-bolder" href="#" id="iv">Errand Boy</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end fw-bold" id="navbarNav">
+                    <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link me-3 " aria-current="page" href="./index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-3" href="./service.php">Services</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Register
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="./login.php">Login</a></li>
+                        <li><a class="dropdown-item" href="./register.php">Create an account</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="./becomeanagent.php">Become a agent</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.php">Contact us</a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         
         <!-- Landing image -->
         <div class="" id="landingImage">
@@ -157,8 +190,88 @@
                 </div>
               </div>
         </div>
-        <!-- Footer This uses the footer stlye from include/footer/footernav-->
-        <?php include ("include/footer/indexnav.php"); ?>
+
+        <!-- Footer -->
+        <footer class="bg-light text-dark py-4 mt-5">
+            <div class="container">
+            <div class="row">
+                <div class="col-md-3 mt-3">
+                    <div class="">
+                        <img src="./asset/image/WhatsApp_Image_2024-12-11_at_1.48.46_PM-removebg-preview.png" alt="" width="80px">
+                        <h4 class="text-danger fw-bolder">Errand Boy</h4>
+                        <h6 class="moto"></h6>
+                    </div>
+                    <div class="social">
+                        <a href="#" class="text-dark mr-3 me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-dark mr-3 me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-dark mr-3 me-3"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3">
+                        <h5 class="fw-bolder">Errands</h5>
+                        <ul class="list-unstyled  fw-semibold">
+                            <li><a href="#" class="text-dark">Delivery</a></li>
+                            <li><a href="#" class="text-dark">Pickup</a></li>
+                            <li><a href="#" class="text-dark">Food Delivery</a></li>
+                            <li><a href="#" class="text-dark">Laundry</a></li>
+                            <li><a href="#" class="text-dark">Get grocery</a></li>
+                            <li><a href="#" class="text-dark">Errands for Others</a></li>
+                        </ul>
+                </div>
+                <div class="col-md-3 mt-3" id="foot">
+                    <h5 class="fw-bolder">Partner with Us</h5>
+                    <ul class="list-unstyled  fw-semibold">
+                        <li><a href="#" class="text-dark">Register as an agent</a></li>
+                        <li><a href="#" class="text-dark">Register as a courier</a></li>
+                        <li><a href="#" class="text-dark">Joint Ventures</a></li>
+                        <li><a href="#" class="text-dark">Corporate Partnerships</a></li>
+                        <li><a href="#" class="text-dark">franchise</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mt-3" id="foot">
+                    <h5 class="fw-bolder">Company</h5>
+                    <ul class="list-unstyled  fw-semibold">
+                        <li><a href="#" class="text-dark">About us</a></li>
+                        <li><a href="#" class="text-dark">Careers</a></li>
+                        <li><a href="#" class="text-dark">Blog</a></li>
+                    </ul>
+                </div>
+                        
+                    </div>
+                    <div class="text-center mt-4">
+                        <p class="copyright fw-bold">&copy; 2024 Errand boy. All Rights Reserved.</p>
+                    </div>
+                </div>
+        
+                <!-- Styling footer -->
+                <style>
+                    footer  ul li a {
+                        text-decoration: none;
+                        color: black;
+                    }
+                
+                    .fw-bolder, .fw-semibold, .moto{
+                        cursor:default;
+                    }
+                
+                    footer #qqq a {
+                        display: inline-block;
+                        padding: 5px 0;
+                    }
+                
+                    footer .container li a:hover { 
+                    color: #dc3545 !important;
+                    }
+        
+                    .social a:hover{
+                    color:  #dc3545 !important;
+                    }
+        
+                    .copyright{
+                    cursor: default;
+                    }
+                </style>
+        </footer>
     </div>
 
     <!-- javascript link-->
