@@ -12,9 +12,9 @@
     left: 5%;
     position: relative;
 }
-#landingImageHead h5{
+#landingImageHead h6{
     font-family: Arial,'Lucida Sans';
-    font-size: 60px;
+    font-size: 40px;
     font-weight: bolder;
 }
 #landingImageHead p{
