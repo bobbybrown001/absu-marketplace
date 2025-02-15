@@ -1,0 +1,359 @@
+/* *******************
+Sidebar for Large Screens 
+**********************/
+.sidebar {
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    z-index: 1100;
+    left: 0;
+    top: 0;
+    background-color: #dc3545;
+}
+
+/* Brand Name for Large Screens */
+.sidebar .top .logo h3{
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px; 
+}
+
+/* sidebar links */
+.sidebar ul{
+    gap: 1rem;
+    margin-top: 40px;
+}
+
+
+.sidebar ul li a {
+    color: white;
+    padding: 4px 5px;
+    gap: 1rem;
+    transition: all .1s ease-in;
+    text-decoration: none;
+    display: flex;
+}
+
+/* sidebar links icons */
+.sidebar a span{
+    font-size: 1.6rem;
+    transition: all .1s ease-in;
+}
+
+/* sidebar links icons last-child(logout) */
+.sidebar li:last-child{
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+}
+
+/* .sidebar links active */
+.sidebar a.active{
+    color: white;
+    margin-left: 0px;
+    border-left: 6px solid  #6c757d;
+}
+
+/* .sidebar before links active */
+.sidebar a.active::before{
+    content: '';
+    width: 6px;
+    height: 100%;
+}
+
+
+/* .sidebar hover icons  */
+.sidebar a:hover span{
+    margin-left: 1rem;
+    transition: .4s ease;
+}
+
+/* .sidebar message msg_count  */
+.sidebar a span.msg_count{
+    background-color: red;
+    color: white;
+    padding: 2px 5px;
+    font-size: 11px;
+    position: absolute;
+    border-radius: 25%;
+    margin-left: 0.2rem;
+}
+
+
+/***********************************
+:root DarkMode - LightMood
+************************************/
+:root {
+    --lightMode-background: white;
+    --lightMode-text: #212529;
+    --darkMode-background: rgb(18, 18, 36);
+    --darkMode-text: white;
+    --darkMode-transition: all .40s ease;
+}
+
+.sidebar ul .theme-toggler{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 6rem;
+    margin-left: 25px;
+}
+
+/**********************************************
+light mode theme toggler for light and dark icons
+************************************************/
+.theme-toggler{
+    display: flex;
+    margin-right: 1.9rem;
+    background-color: rgb(18, 18, 36);
+    padding: 7px;
+    border-radius: 30px;
+}
+
+.theme-toggler #dark_mode span{
+    padding: 0.3rem;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-radius: 50%;
+}
+
+.theme-toggler #light_mode span{
+    border-radius: 50%;
+    background-color: white;
+    color: rgb(18, 18, 36);
+    font-size:1.8;
+    padding: 0.3rem;
+    cursor: pointer;
+}
+
+
+/***********************************
+DarkMode - LightMood using javaScript
+************************************/
+
+.darkMode{
+    background-color: var(--darkMode-background);
+    color: var(--darkMode-text);
+}
+
+.lightMode{
+    background-color: var(--lightMode-background);
+}
+
+/* user dashboard light - dark*/
+.darkMode .sidebar{
+    background-color: rgb(18, 18, 36);
+    color: white;
+}
+.darkMode .sidebar a{
+    color: white;
+}
+.darkMode .sidebar a.active{
+    color:blue;
+}
+.darkMode .sidebar a:hover{
+    color:blue;
+}
+.darkMode .right h2{
+    color:white;
+}
+.darkMode .sidebar{
+    background-color: var(--darkMode-background);
+}
+.darkMode .sidebar a.active{
+    color: var(--darkMode-text);
+}
+
+/**********************************************
+dark mode theme toggler for light and dark icons
+************************************************/
+.darkMode .theme-toggler{
+    background-color: white;
+}
+
+.darkMode .theme-toggler #light{
+    /* background-color: white; */
+    color: rgb(18, 18, 36);
+}
+.darkMode .theme-toggler #dark{
+    background-color: rgb(18, 18, 36);
+    color: white;
+    border-radius: 50%;
+    font-size:1.8;
+    padding: 0.3rem;
+    cursor: pointer;
+}
+
+
+/* mege */
+.darkMode .conversations{
+    background-color: rgb(18, 18, 36);
+}
+.darkMode .conversations .head{
+    background-color: rgb(18, 18, 36);
+}
+.darkMode .chat-box{
+    background-color: rgb(18, 18, 36);
+}
+.darkMode .chat-box .profile{
+    color: #212529;
+}
+.darkMode .input-container span{
+    color: rgb(18, 18, 36);
+}
+.darkMode .input-container button{
+    background-color: rgb(18, 18, 36);
+}
+.darkMode .conversations .chat-list li:hover{
+    background-color:rgb(29, 29, 56);
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+/****************************
+Media  query for mobile phone
+****************************/
+
+
+@media (max-width: 992px) {
+    .sidebar {
+        display: none;
+    }
+    .offcanvas{
+        background-color: white;
+    }
+    .offcanvas-logo{
+        font-weight: bolder;
+        font-size:1.7rem;
+        text-align: center;
+        margin-top: 10px; 
+    }
+    .offcanvas ul{
+        gap: 1rem;
+    }
+    .offcanvas ul li a {
+        color: #343a40;
+        padding: 4px 5px;
+        gap: 1rem;
+        transition: all .1s ease-in;
+        text-decoration: none;
+        display: flex;
+    }
+    .offcanvas a span{
+        font-size: 1.6rem;
+        transition: all .1s ease-in;
+    }
+    .offcanvas li:last-child{
+        position: absolute;
+        bottom: 1rem;
+        width: 100%;
+    }
+    .offcanvas a.active{
+        color:  #343a40;
+        margin-left: 0px;
+        border-left: 6px solid  #6c757d;
+    }
+    .offcanvas a.active::before{
+        content: '';
+        width: 6px;
+        height: 100%;
+    }
+    .offcanvas a:hover span{
+        margin-left: 1rem;
+        transition: .4s ease;
+    }
+    .offcanvas a span.msg_count{
+        background-color: red;
+        color: white;
+        padding: 2px 5px;
+        font-size: 11px;
+        position: absolute;
+        border-radius: 25%;
+        margin-left: 0.2rem;
+    }
+    .navbar .container-fluid button{
+        background-color: white;
+    }
+    /***********************
+    dark mode and light dark
+    ************************/
+
+    /* light */
+    .lightMode{
+        background-color: var(--lightMode-background);
+    }
+    .offcanvas ul .theme-toggler{
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 6rem;
+        margin-left: 25px;
+    }
+    .offcanvas .theme-toggler{
+        display: flex;
+        margin-right: 1.9rem;
+        background-color: rgb(18, 18, 36);
+        padding: 7px;
+        border-radius: 30px;
+    }
+    .offcanvas .theme-toggler #sm-light_mode span{
+        border-radius: 50%;
+        background-color: white;
+        color: rgb(18, 18, 36);
+        font-size:1.8;
+        padding: 0.3rem;
+        cursor: pointer;
+    }
+    .offcanvas .theme-toggler #sm-dark_mode span{
+        border-radius: 50%;
+        background-color: rgb(18, 18, 36);
+        color: white;
+        font-size:1.8;
+        padding: 0.3rem;
+        cursor: pointer;
+    }
+
+    /* dark */
+    .darkMode .offcanvas ul .theme-toggler{
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 6rem;
+        margin-left: 25px;
+    }
+    .darkMode{
+        background-color: var(--darkMode-background);
+        color: var(--darkMode-text);
+    }
+    .darkMode .offcanvas{
+        background-color: var(--darkMode-background);
+    }
+    .darkMode .offcanvas .theme-toggler{
+        background-color: white;
+    }
+    .darkMode .offcanvas ul li a{
+        color: white;
+    }
+    .darkMode .offcanvas .theme-toggler #sm-light_mode span{
+        border-radius: 50%;
+        color: rgb(18, 18, 36);
+        font-size:1.8;
+        padding: 0.3rem;
+        cursor: pointer;
+    }
+    .darkMode .offcanvas .theme-toggler #sm-dark_mode span{
+        border-radius: 50%;
+        background-color: rgb(18, 18, 36);
+        color: white;
+        font-size:1.8;
+        padding: 0.3rem;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,44 @@
+/* Sidebar styles */
+#setting-bar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    margin-left: 250px;
+    top: 0;
+    left: 0;
+    background: #343a40;
+    padding-top: 1rem;
+}
+
+#setting-bar a {
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+}
+
+#setting-bar a:hover {
+    background: #495057;
+}
+
+/* Content area */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+/****************************
+Hide sidebar on small screens
+*****************************/
+@media (max-width: 991px) {
+    #setting-bar {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .content {
+        margin-left: 0;
+    }
+}

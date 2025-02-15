@@ -1,0 +1,103 @@
+*{
+    border: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    appearance: none;
+}
+
+body{
+    font-family: "Poppins", serif !important;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    user-select: none;
+}
+
+
+/************ 
+main container Area 
+*************/
+.maincontainer {
+    margin-left: 250px;
+    padding: 20px;
+
+}
+
+.maincontainer .content{
+    margin:50px 30px 0px 30px;
+    padding: 13px 70px;
+    background-color: #F8F9FA;
+    border-radius: 30px;
+}
+
+/* profile-photo */
+.profile-photo img{
+    object-fit: contain;
+    width: 20rem;
+    height: 20rem;
+    background-color: gray;
+}
+
+
+.profile-container{
+    display: flex;
+    gap: 5rem;
+}
+
+.my-profile{
+    margin: 30px 0; 
+    display: flex;
+    justify-content: space-between;
+}
+.my-profile h2{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.my-profile span{
+    cursor: pointer;
+    color:black;
+    font-size: 2rem;
+}
+
+.details{
+    width: 100rem;
+}
+
+form{
+    width:auto;
+}
+
+form .inp{
+    display: flex;
+    gap: 1rem;
+}
+
+form .input input{
+    /* max-width:max-content; */
+    width:auto;
+}
+
+
+
+
+
+@media (max-width: 1200px) {
+    .maincontainer{
+        width:auto;
+    }
+    .profile-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        /* background-color: red; */
+    }
+}
+
+@media (max-width: 991px) {
+    .maincontainer {
+        margin-left: 0 ; 
+    }
+}

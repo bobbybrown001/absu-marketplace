@@ -1,0 +1,17 @@
+*{
+    border: none;
+    padding: none;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Styling navbar */
+.navbar {
+    transition: background-color 0.8s ease;
+}
+
+/* Styling when navbar has background color */
+.navbar-scrolled {
+    background-color: rgba(255, 255, 255); 
+
+}

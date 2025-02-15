@@ -1,0 +1,49 @@
+*{
+    border: none;
+    padding: none;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+/* Styling everything in the landing image */
+#landingImageHead{
+    top: 36%;
+    left: 5%;
+    position: relative;
+}
+#landingImageHead h5{
+    font-family: Arial,'Lucida Sans';
+    font-size: 60px;
+    font-weight: bolder;
+}
+#landingImageHead p{
+    font-family: Arial,'Lucida Sans';
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0px 5px 10px #ffffff;
+}
+#landingImage{
+    background-image: url('../asset/image/landingpage.jpg');
+    /* background-image: url('../asset/image/WhatsApp\ Image\ 2024-12-11\ at\ 3.04.27\ PM.jpeg'); */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+
+/* styling button in agent section */
+#agent-image #first-image{
+    transition: transform 0.2s;
+}
+#agent-image #first-image:hover{
+    transform: scale(1.2);
+}
+
+#btn2{
+    border: none;
+}
+#btn2:hover{
+    background-color:#fca62e;
+    border: none;
+}

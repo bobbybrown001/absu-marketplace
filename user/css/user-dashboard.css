@@ -1,0 +1,271 @@
+*{
+    border: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    appearance: none;
+}
+
+body{
+    font-family: "Poppins", serif !important;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    user-select: none;
+}
+
+/************ 
+Content Area 
+*************/
+.maincontainer {
+    display: grid;
+    margin-left: 250px;
+    padding: 20px;
+    gap: 1.8rem;
+    grid-template-columns: auto 16rem;
+}
+
+
+/* Main Content */
+.content{
+    width: auto;
+}
+
+/* Content, card */
+.content .insights > div .card{
+    margin: 1.4rem;
+    border: none;
+    padding: 1.8rem;
+    border-radius: 20px;
+}
+
+/* Content, card icon */
+.content .insights > div span{
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: white;
+    font-size: 2rem;
+    width:50px;
+    margin-bottom: 1rem;
+}
+
+/* Content, card middle section */
+.content .insights  > div .middle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Content, card middle section h1 */
+.content .insights  > div .middle h1{
+    font-size: 1.9rem;
+    font-weight:bold;
+}
+
+/* Content, card middle section h3 */
+.content .insights  > div .middle h3{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Content, card middle section progresss */
+.content .insights .progresss{
+    position: relative;
+    width: 68px;
+    height: 68px;
+}
+
+/* Content, card middle section progresss svg */
+.content .insights  svg{
+    height: 150px;
+    position:absolute;
+    top: 0;
+}
+
+/* Content, card middle section progresss circle */
+.content .insights  svg circle{
+    fill: none;
+    stroke: aqua;
+    stroke-width: 5;
+}
+
+/* Content, card middle section progresss number */
+.content .insights .progresss .number{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Recent Order */
+.content .recent-order{
+    margin-top: 3rem;
+}
+
+/* Recent Order table div */
+.content .recent-order .table{
+    background-color: white;
+}
+
+
+/***************** 
+RightSide Section 
+*******************/
+
+/* RightSide Section */
+.right{
+    margin-top: 1.4rem;
+    width: auto;
+}
+
+
+/* profile Section */
+.right .top .profile{
+    display: flex;
+    gap: 1.3rem;
+    text-align: center;
+}
+
+/* profile-photo */
+.profile-photo img{
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: rgb(2, 117, 73);
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+/* right all h2 */
+.right h2{
+    color: #212529;
+    font-size: 1.8rem;
+}
+
+/* right top (profile) */
+.right .top{
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+
+/* Recent Update */
+.right .recent-update{
+    margin-top: 1rem;
+    margin-left: -30px;
+}
+
+/* Recent Updates */
+.right .recent-update .updates{
+    margin-right: 14px;
+    border: none;
+    gap: 0.8rem;
+}
+
+/* Recent Update */
+.right .recent-update .update{
+    display: grid;
+    grid-template-columns: 2.6rem auto;
+    gap: 1.7rem;
+}
+
+/* sale analystics */
+.right .sale_analystics{
+    margin-top: 2rem;
+    margin-right: 14px;
+}
+
+/* sale analystics all items */
+.right .sale_analystics .item_online{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 0.8rem;
+    padding: 0.5rem;
+
+}
+
+/* styling all the header in sale analystics */
+.right .sale_analystics .item_online .info h3{
+    font-size: 1.3rem;
+    white-space: nowrap;
+}
+.right .sale_analystics .item_online .info small{
+    font-size: 1rem;
+    white-space: nowrap;
+}
+.right .sale_analystics .item_online h5{
+    font-size: 1rem;
+}
+.right .sale_analystics .item_online h3{
+    font-size: 0.9rem;
+}
+
+/* sale analystics all items icon */
+.right .sale_analystics .item_online .Icon{
+    background-color: coral;
+    padding: 0.6rem;
+    color: white;
+    border-radius: 50%;
+    height: 50px;
+    width: 20%;
+    line-height: 45px;
+    align-items: center;
+    text-align: center;
+}
+
+/* item_online icon */
+.right .sale_analystics .item_online:nth-child(3) .Icon{
+    background-color: aqua;
+}
+.right .sale_analystics .item_online:nth-child(4) .Icon{
+    background-color:yellow;
+}
+
+
+@media (max-width: 790px) {
+    .right .top{
+        position: absolute;
+        top: 0;
+        left: 53%;
+        margin-top: 30px;
+    }
+}
+
+
+
+@media (max-width: 1390px) {
+    .maincontainer {
+        margin-left: 277px;
+        display:grid;
+        grid-template-columns: 100%;
+    }
+    .right .top{
+        position: absolute;
+        top: 0;
+        left: 63%;
+        margin-top: 30px;
+    }
+    .right .top .theme-toggler{
+        margin-right: 20px;
+    }
+    .right .recent-update{
+        margin: 0  auto;
+        margin-bottom: 90px;
+    }
+}
+
+@media (max-width: 991px) {
+    .maincontainer {
+        margin-left: 0; 
+    }
+}

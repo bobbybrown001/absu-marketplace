@@ -1,0 +1,58 @@
+*{
+    border: none;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    overflow-y: none;
+}
+
+body{
+    background-color: white;
+}
+
+/* form container */
+.collection{
+    background-color: white;
+    width: 600px;
+    padding: 1.5rem;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 1, 0.4);
+}
+
+form{
+    margin: 0 0.5rem;
+}
+
+input{
+    color: inherit;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    margin-left: 20rem;
+}
+
+
+label{
+    font-weight: 500;
+}
+
+/* Next Button */
+.first-button{
+    width: 100%;
+}
+.second-button{
+    width: 45%;
+}
+.third-button{
+    width: 45%;
+}
+
+/* back button */
+.back-button2{
+    width: 45%;
+} 
+
+.back-button3{
+    width: 45%;
+}
