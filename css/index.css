@@ -5,6 +5,9 @@
     list-style: none;
 }
 
+body{
+    background-color: red;
+}
 
 /* Styling everything in the landing image */
 #landingImageHead{
