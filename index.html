@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>index</title>
     <!-- css nav link -->
     <link rel="stylesheet" href="./css/nav.css">
     <!-- css link -->
@@ -15,6 +15,9 @@
     <!-- font awsome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
     
+    <!-- Google Material Icons CDN -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
 </head>
 <body>
     <div class="overflow-x-hidden overflow-y-auto">
@@ -56,19 +59,18 @@
         
         <!-- Landing image -->
         <div class="" id="landingImage">
-            <div class="col-12 col-md-6" id="landingImageHead">
+            <div class="col-12 col-md-6 px-3" id="landingImageHead">
                 <h5 class=" text-danger">ABSU MARKETPLACE</h5>
                 <p>
-                    Life gets easier when you let us take care of your <br>
-                    errands. where ever you are in Absu, we're <br>
-                    here to make yourlife simpler and more convenient.
+                    Simplifying campus life by connecting you with the products, 
+                    services, and support you need.
                 </p>
-                <a class="btn btn-danger fw-bold rounded-3" href="./register.php">Get started</a>
+                <a class="btn btn-danger fw-bold rounded-3" href="#">Get started</a>
             </div>
         </div>
         
         <!-- Wlecome intorduction -->
-        <div class="container-lg text-center" style="margin-top: 250px;">
+        <div class="container-lg text-center animated-element" style="margin-top: 150px;">
             <h1 class="fw-bold fs-1">
                 WELCOME TO YOUR TRUSTED MARKETPLACE
             </h1>
@@ -83,10 +85,11 @@
         </div>
 
         <!-- first image with write ups -->
-        <div class="container" style="margin-top: 250px;">
+        <div class="container" style="margin-top: 150px;">
             <div class="row">
                 <div class="col-12 col-md-6">
                     <h1>Access Everything You Need on Campus, Quickly and Easily</h1>
+                    <hr>
                     <p>
                         Stop the endless search! Whether you're after books and study materials, 
                         electronics and gadgets, fashion and accessories, payments and services, 
@@ -98,7 +101,7 @@
                     </p>
 
                     </p>
-                    <a class="btn btn-danger mb-5" href="./register.php">
+                    <a class="btn btn-danger mb-5" href="#">
                         Request Now
                     </a>
                 </div>
@@ -110,34 +113,136 @@
         </div>
         
         <!-- Agent Section -->
-        <div class="bg-danger">
+        <div class="bg-danger" style="padding: 80px 50px; margin-top: 100px;">
             <div class="row">
-                <div class=" col-12 col-md-6">
-                    <img src="./asset/image/pexels-tima-miroshnichenko-6170089.jpg" alt="" 
-                    style="width: 200px; height: auto; border-radius: 20px 0 0 0;"class="img-fluid py-2 px-2">
-                    <img src="./asset/image/pexels-kampus-6667683.jpg" alt="" 
-                    style="width: 200px; height: auto; border-radius: 0 20px 0 0;"class="img-fluid py-2 px-2">
-                    <img src="./asset/image/landingpage.jpg" alt="" 
-                    style="width: 200px; height: auto; border-radius: 0 0 0 20px;"class="img-fluid py-2 px-2">
-                    <img src="./asset/image/manwithbox.jpg" alt="" 
-                    style="width: 200px; height: auto; border-radius: 0 0 20px 0;"class="img-fluid py-2 px-2">
+                <div class=" col-12 col-md-5">
+                    <img src="./asset/image/pexels-tima-miroshnichenko-6170089.jpg" alt="" class="img-fluid"
+                    style="width: 500px; height: auto; box-shadow: 1px 1px 2px rgb(43, 43, 43);">
                 </div>
                 
-                <div class="col-12 col-md-6">
-                    <h1 class="text-warning">Become an Errand Agent</h1>
-                    <p class="text-light">
-                        Are you looking for a flexible, rewarding way to earn extra income? 
-                        Do you enjoy helping others and keeping things organized? At Errand boy 
-                        we're always looking for reliable, hardworking individuals to join our team as Errand Agents.
-
-                        As an Errand Agent, you'll be the backbone of our service, helping customers 
-                        with everything from grocery runs to handling essential tasks around town. Whether 
-                        you're looking for full-time work or just a side hustle, this is the perfect 
-                        opportunity to turn your time into money.
-                    </p>
+                <div class="col-12 col-md-6 animated-element">
+                    <h1 class="text-warning">Become an Agent</h1>
+                    <h5 class="text-warning" style="font-size: 1rem;"> Be the Helping Hand Your Campus Needs! </h5>
+                    <hr>
+                    <div class="text-light">
+                        <h6>
+                            Are you looking for a way to connect with fellow students, advertise your products
+                            and services, or even run errands on campus? Becoming an agent at Absu Marketplace
+                            is the perfect opportunity for you! As an agent, you'll have the chance to create
+                            a meaningful presence within your campus community, offering your goods and
+                            services to students who need them. Whether you're looking to sell products,
+                            provide helpful services, or even assist with tasks around campus, this platform
+                            allows you to connect directly with buyers and sellers in a secure and efficient environment.
+                        </h6>
+                    </div>
                     <a class="btn btn-light "  id="btn2" href="#">
                         Join us 
                     </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Become an Agent? -->
+        <div class="bg-warning" style="padding: 60px;">
+
+            <div class=" col-12 col-md-12 d-flex justify-content-center">
+                <img src="./asset/image/why.png" alt="" class="img-fluid" style="width: 300px; height: auto;">
+            </div>
+
+            <div class="row">
+                
+                <div class="col-12 col-md-6 text-danger">
+                    <h2 class="text-dark fw-bolder">Why Become an Agent?</h2>
+                    <div class="why-become-agent">
+                        <div class="become-agent">
+                            <div class="check">
+                                <span class="material-symbols-outlined text-danger"> check_circle</span>
+                            </div>
+                            <div>
+                                Earn as You Help: Get rewarded for assisting students.
+                            </div>
+                        </div>
+                        <div class="become-agent">
+                            <div class="check">
+                                <span class="material-symbols-outlined text-danger"> check_circle</span>
+                            </div>
+                            <div>
+                                Flexible Work: Help at your convenience, no strict hours.
+                            </div>
+                        </div>
+                        <div class="become-agent">
+                            <div class="check">
+                                <span class="material-symbols-outlined text-danger"> check_circle</span>
+                            </div>
+                            <div>
+                                Get the right audience to sell your goods and render services. 
+                            </div>
+                        </div>
+                        <div class="become-agent">
+                            <div class="check">
+                                <span class="material-symbols-outlined text-danger"> check_circle</span>
+                            </div>
+                            <div>
+                                Best place to get avaiable and serious buyers
+                            </div>
+                        </div>
+                        <div class="become-agent">
+                            <div class="check">
+                                <span class="material-symbols-outlined text-danger"> check_circle</span>
+                            </div>
+                            <div>
+                                Safe & Secure: Trade within a trusted student network.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Why Join as a User? -->
+                <div class="col-12 col-md-6 text-danger">
+                    <h2 class="text-dark fw-bolder">Why Join as a User?</h2>
+                    <div class="why-become-agent">
+                        <div class="become-agent">
+                            <div class="check">
+                                <span class="material-symbols-outlined text-danger"> check_circle</span>
+                            </div>
+                            <div>
+                                P2P Transactions: Connect directly with sellers and service providers.
+                            </div>
+                        </div>
+                        <div class="become-agent">
+                            <div class="check">
+                                <span class="material-symbols-outlined text-danger"> check_circle</span>
+                            </div>
+                            <div>
+                                Affordable Prices: Get the best deals from people within your school.
+                            </div>
+                        </div>
+                        <div class="become-agent">
+                            <div class="check">
+                                <span class="material-symbols-outlined text-danger"> check_circle</span>
+                            </div>
+                            <div>
+                                Get goods and services you've always wanted to get but don't know where to get them.
+                            </div>
+                        </div>
+                        <div class="become-agent">
+                            <div class="check">
+                                <span class="material-symbols-outlined text-danger"> check_circle</span>
+                            </div>
+                            <div>
+                                Quick Assistance: Need help with something? Our verified agents are ready to assist.
+                            </div>
+                        </div>
+                        <div class="become-agent">
+                            <div class="check">
+                                <span class="material-symbols-outlined text-danger"> check_circle</span>
+                            </div>
+                            <div>
+                                Safe & Secure: Trade within a trusted student network.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -150,34 +255,31 @@
                 </div>
                 
                 <!-- prosedures -->
-                <div class="prosedures col-12 col-md-6 mt-md-5">
-                    <h1 class="text-danger text-center">Get Started</h1>
-                    <div>
-                        <div class="card mx-5">
-                            <div class="d-flex">
-                                <h4>1</h4>
-                                <div>
-                                    <h3>Sign Up</h3>
-                                    <p>Create your account in minutes</p>
-                                </div>
+                <div class="prosedures col-12 col-md-7 mt-md-5">
+                    <div class="get-started-section  mx-4">
+                        <h2>Get Started</h2>
+                        
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div>
+                                <h4>Sign Up</h4>
+                                <p>Create your account in minutes</p>
                             </div>
-                            <div class="d-flex">
-                                <h4>2</h4>
-                                <div>
-                                    <h3>Browse and Connect</h3>
-                                    <p>Find products, services or request an agent's help.</p>
-                                </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div>
+                                <h4>Browse and Connect</h4>
+                                <p>Find products, services or request an agent's help.</p>
                             </div>
-                            <div class="d-flex">
-                                <h4>3</h4>
-                                <div>
-                                    <h3>Chat & Transact</h3>
-                                    <p>Discuss deals and finalize transactions securely.</p>
-                                </div>
-                            </div>
-                            <div class="d-flex">
-                                <h4>4</h4>
-                                <h3>Enjoy a Hassle-Free Campus Life!</h3>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div>
+                                <h4>Chat & Transact</h4>
+                                <p>Discuss deals and finalize transactions securely.</p>
                             </div>
                         </div>
                     </div>
@@ -192,133 +294,150 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        How do I request an errand?
+                        How do I request an Agent?
                     </button>
                   </h2>
                   <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
-                        Simply create an account with us, select the service you need, and provide 
-                        details such as the location, items, and any specific instructions. Once you submit the request, 
-                        our team will confirm and assign an errand runner to complete it.    
+                        Simply create an account with us, select the service you need, 
+                        and you would be connected to the avaiable agent based on your request 
                     </div>
                   </div>
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                        Are your errand runners trusted?
+                        Are your agents trusted?
                     </button>
                   </h2>
                   <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
-                        Absolutely! All our errand runners undergo a thorough background check 
-                        to ensure safety and trust. They are also trained to provide excellent 
-                        customer service.
+                        We only provide a platform for users and agents to connect and trade goods and services.
                     </div>
                   </div>
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                        How do I pay for my service?
+                        How are payments been made?
                     </button>
                   </h2>
                   <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
-                        Payments are been made on delivery.
+                        Payments are made through a peer-to-peer (P2P) format, users and agents transfer payments 
+                        directly to each other through their individual deals. We provide the platform for these connections, 
+                        but the actual payment exchange occurs between the parties involved.
                     </div>
                   </div>
                 </div>
-              </div>
+            </div>
         </div>
+
         <!-- Footer -->
         <footer class="bg-light text-dark py-4 mt-5">
             <div class="container">
-            <div class="row">
-                <div class="col-md-3 mt-3">
-                    <div class="">
-                        <img src="./asset/image/WhatsApp_Image_2024-12-11_at_1.48.46_PM-removebg-preview.png" alt="" width="80px">
-                        <h4 class="text-danger fw-bolder">Errand Boy</h4>
-                        <h6 class="moto"></h6>
+                <div class="row">
+                    <div class="col-md-3 mt-3">
+                        <div class="">
+                            <img src="./asset/image/WhatsApp_Image_2024-12-11_at_1.48.46_PM-removebg-preview.png" alt="" width="80px">
+                            <h4 class="text-danger fw-bolder">Absu Marketplace</h4>
+                            <h6 class="moto"></h6>
+                        </div>
+                        <div class="social">
+                            <a href="#" class="text-dark mr-3 me-3"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-dark mr-3 me-3"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-dark mr-3 me-3"><i class="fab fa-whatsapp"></i></a>
+                        </div>
                     </div>
-                    <div class="social">
-                        <a href="#" class="text-dark mr-3 me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-dark mr-3 me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-dark mr-3 me-3"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-3 mt-3">
-                        <h5 class="fw-bolder">Errands</h5>
+                    <div class="col-md-3 mt-3">
+                        <h5 class="fw-bolder">Absu Marketplace</h5>
                         <ul class="list-unstyled  fw-semibold">
-                            <li><a href="#" class="text-dark">Delivery</a></li>
-                            <li><a href="#" class="text-dark">Pickup</a></li>
-                            <li><a href="#" class="text-dark">Food Delivery</a></li>
-                            <li><a href="#" class="text-dark">Laundry</a></li>
-                            <li><a href="#" class="text-dark">Get grocery</a></li>
-                            <li><a href="#" class="text-dark">Errands for Others</a></li>
+                            <li><a href="#" class="text-dark">Home</a></li>
+                            <li><a href="#" class="text-dark">Services</a></li>
+                            <li><a href="#" class="text-dark">Login</a></li>
+                            <li><a href="#" class="text-dark">Become a user</a></li>
+                            <li><a href="#" class="text-dark">Terms & Conditions</a></li>
+                            <li><a href="#" class="text-dark">Customer Support</a></li>
                         </ul>
-                </div>
-                <div class="col-md-3 mt-3" id="foot">
-                    <h5 class="fw-bolder">Partner with Us</h5>
-                    <ul class="list-unstyled  fw-semibold">
-                        <li><a href="#" class="text-dark">Register as an agent</a></li>
-                        <li><a href="#" class="text-dark">Register as a courier</a></li>
-                        <li><a href="#" class="text-dark">Joint Ventures</a></li>
-                        <li><a href="#" class="text-dark">Corporate Partnerships</a></li>
-                        <li><a href="#" class="text-dark">franchise</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 mt-3" id="foot">
-                    <h5 class="fw-bolder">Company</h5>
-                    <ul class="list-unstyled  fw-semibold">
-                        <li><a href="#" class="text-dark">About us</a></li>
-                        <li><a href="#" class="text-dark">Careers</a></li>
-                        <li><a href="#" class="text-dark">Blog</a></li>
-                    </ul>
-                </div>
-                        
                     </div>
+                    <div class="col-md-3 mt-3" id="foot">
+                        <h5 class="fw-bolder">Partner with Us</h5>
+                        <ul class="list-unstyled  fw-semibold">
+                            <li><a href="#" class="text-dark">Register as an agent</a></li>
+                            <li><a href="#" class="text-dark">Joint Ventures</a></li>
+                            <li><a href="#" class="text-dark">Corporate Partnerships</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 mt-3" id="foot">
+                        <h5 class="fw-bolder">Company</h5>
+                        <ul class="list-unstyled  fw-semibold">
+                            <li><a href="#" class="text-dark">About us</a></li>
+                            <li><a href="#" class="text-dark">Careers</a></li>
+                            <li><a href="#" class="text-dark">Blog</a></li>
+                        </ul>
+                    </div>
+                            
                     <div class="text-center mt-4">
-                        <p class="copyright fw-bold">&copy; 2024 Errand boy. All Rights Reserved.</p>
+                        <p class="copyright fw-bold">&copy; 2025 Absu Marketplace. All Rights Reserved.</p>
                     </div>
                 </div>
-        
-                <!-- Styling footer -->
-                <style>
-                    footer  ul li a {
-                        text-decoration: none;
-                        color: black;
-                    }
-                
-                    .fw-bolder, .fw-semibold, .moto{
-                        cursor:default;
-                    }
-                
-                    footer #qqq a {
-                        display: inline-block;
-                        padding: 5px 0;
-                    }
-                
-                    footer .container li a:hover { 
-                    color: #dc3545 !important;
-                    }
-        
-                    .social a:hover{
-                    color:  #dc3545 !important;
-                    }
-        
-                    .copyright{
-                    cursor: default;
-                    }
-                </style>
+            </div>
+
+            <!-- Styling footer -->
+            <style>
+                footer  ul li a {
+                    text-decoration: none;
+                    color: black;
+                }
+            
+                .fw-bolder, .fw-semibold, .moto{
+                    cursor:default;
+                }
+            
+                footer #qqq a {
+                    display: inline-block;
+                    padding: 5px 0;
+                }
+            
+                footer .container li a:hover { 
+                color: #dc3545 !important;
+                }
+
+                .social a:hover{
+                color:  #dc3545 !important;
+                }
+
+                .copyright{
+                cursor: default;
+                }
+            </style>
         </footer>
     </div>
 
     <!-- javascript link-->
     <script src="./javascript/index.js"></script>
+    <script>
+        // script.js
+        document.addEventListener("DOMContentLoaded", function() {
+            const elements = document.querySelectorAll('.animated-element');
+
+            function checkVisibility() {
+                elements.forEach(element => {
+                    const rect = element.getBoundingClientRect();
+
+                    // Check if element is in the viewport (a little before the element fully enters the viewport)
+                    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                        element.classList.add('visible');
+                    }
+                });
+            }
+
+            // Listen for scroll events
+            window.addEventListener('scroll', checkVisibility);
+
+            // Trigger the check on page load
+            checkVisibility();
+        });
+    </script>
 </body>
 </html>
-
-
-Whether you're looking for a product, need help with a service, or 
-want to earn by selling or assisting others, this is the place for you!
