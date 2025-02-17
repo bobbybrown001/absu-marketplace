@@ -25,7 +25,6 @@
 }
 #landingImage{
     background-image: url('../asset/image/landingpage.jpg');
-    /* background-image: url('../asset/image/WhatsApp\ Image\ 2024-12-11\ at\ 3.04.27\ PM.jpeg'); */
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -42,7 +41,10 @@
 
 
 
-/* styling button in agent section */
+/***********************
+Styling Agent Section
+************************/
+
 #agent-image #first-image{
     transition: transform 0.2s;
 }
@@ -59,32 +61,62 @@
 }
 
 
-/* getting started */
-
-.get-started img{
-    width: 600px;
-}
-
-.get-started .prosedures .card{
-    border: none;
-    padding: 30px;
+/********************
+Why Become an Agent
+********************/
+.why-become-agent .become-agent{
+    display: flex;
+    margin-bottom: 8px;
     gap: 1rem;
-    border-radius: 30px;
 }
-.get-started .prosedures .card h4{
-    background-color: #dc3545;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    padding: 10px;
-    text-align: center;
+
+
+
+
+/***************
+Getting Started
+***************/
+.get-started-section {
+    max-width: 600px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    border: none;
+    margin:0px 0px 50px 0px;
+}
+.step {
+    display: flex;
+    margin-bottom: 8px;
+}
+.step-number {
+    background-color: #d9534f;
     color: white;
-    font-weight:bolder;
-}
-.get-started .prosedures .card h3{
-    font-weight: bolder;
-}
-.get-started .prosedures .card .d-flex{
-    gap: 2rem;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-right: 15px;
+}
+.get-started-section h2 {
+    color: #d9534f;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+/******************
+animated-element 
+*******************/
+.animated-element {
+    opacity: 0; /* Initially hide the content */
+    transition: opacity 0.4s ease-out;
+}
+
+/* When the element becomes visible, apply the 'visible' class */
+.visible {
+    opacity: 1; /* Fade in the content */
 }
