@@ -1,4 +1,6 @@
-// Select the navbar
+/****************
+ Select the navbar
+*****************/
 const navbar = document.querySelector('.navbar');
 
 // Add/remove the scrolled class based on scroll position
@@ -10,6 +12,27 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Tooltips - Used in displaying message below a text or object
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+/*******************
+For scroll animation
+********************/
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".animation");
+  
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            entry.target.classList.remove("show");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+  
+    elements.forEach((element) => {
+      observer.observe(element);
+    });
+  });
