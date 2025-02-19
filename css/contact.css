@@ -6,11 +6,57 @@
     overflow-y: none;
 }
 
-.contact-container{
-    margin-top: 200px;
+
+/* Styling navbar */
+.navbar {
+    transition: background-color 0.8s ease;
 }
 
-/* Styling contact form */
+/* Styling when navbar has background color */
+.navbar-scrolled {
+    background-color: rgba(255, 255, 255); 
+}
+
+
+
+/* contact */
+.contact-container{
+    margin-top: 160px;
+}
+
+.contact-info {
+    background-color: #17a2b8;
+    padding: 40px 10px 40px 10px;
+}
+
+.contact-info {
+    background: linear-gradient(to right, #0174BE, #01949A);
+    border-radius: 10px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    color: black;
+}
+
+
+
+/*********************
+Styling contact form
+**********************/
 .form-container{
     display: flex;
     justify-content: center;
@@ -61,4 +107,30 @@ input:focus, textarea:focus {
 }
 .button input:hover{
     background-color:#c03240;
+}
+
+
+
+
+/**********************************
+Contact us on whatsapp button fixed
+************************************/
+.fixed-whatsapp{
+    position: fixed;
+    bottom: 30px;
+    right: 10px;
+    z-index: 1;
+    background-color: #25D366;
+    border-radius: 50%;
+    width:60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.fixed-whatsapp a i{
+    color: white;
+    font-size: 30px;
 }

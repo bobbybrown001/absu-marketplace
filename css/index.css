@@ -5,6 +5,17 @@
     list-style: none;
 }
 
+/* Styling navbar */
+.navbar {
+    transition: background-color 0.8s ease;
+}
+
+/* Styling when navbar has background color */
+.navbar-scrolled {
+    background-color: rgba(255, 255, 255); 
+
+}
+
 
 /* Styling everything in the landing image */
 #landingImageHead{
@@ -84,9 +95,16 @@ Getting Started
     border: none;
     margin:0px 0px 50px 0px;
 }
-.step {
-    display: flex;
+.step-container {
     margin-bottom: 8px;
+    display: block;
+}
+.step-container p{
+    margin-left: 55px;
+}
+
+.step{
+    display: flex;
 }
 .step-number {
     background-color: #d9534f;
@@ -111,12 +129,36 @@ Getting Started
 /******************
 animated-element 
 *******************/
-.animated-element {
-    opacity: 0; /* Initially hide the content */
-    transition: opacity 0.4s ease-out;
+.animation{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.7s ease-out, transform 0.8s ease-out;
+}
+  
+.animation.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* When the element becomes visible, apply the 'visible' class */
-.visible {
-    opacity: 1; /* Fade in the content */
+/**********************************
+Contact us on whatsapp button fixed
+************************************/
+.fixed-whatsapp{
+    position: fixed;
+    bottom: 30px;
+    right: 10px;
+    z-index: 1;
+    background-color: #25D366;
+    border-radius: 50%;
+    width:60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.fixed-whatsapp a i{
+    color: white;
+    font-size: 30px;
 }
