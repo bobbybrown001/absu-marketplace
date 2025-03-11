@@ -7,7 +7,7 @@
 }
 
 body{
-    background-color: white;
+    background: linear-gradient(135deg, #ff4e95, #8e2de2);
 }
 
 /* form container */
@@ -17,7 +17,7 @@ body{
     margin: 50px auto;
     border-radius: 10px;
     box-shadow: 0 20px 35px rgba(0, 0, 1, 0.4);
-    /* width: 500px !important; */
+    margin-top: 100px;
 }
 
 form{
@@ -37,7 +37,30 @@ label{
     font-weight: 500;
 }
 
+/* show password */
+.show-password{
+    position:relative;
+    left: 90%;
+    top:10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.show-confirm-password{
+    position:relative;
+    left: 90%;
+    top:10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+
 /* Next Button */
 .third-button{
+    border: none !important;
+    background: linear-gradient(90deg, #ff4e95, #8e2de2);
+    color: white;
+    padding: 10px;
     width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
 }

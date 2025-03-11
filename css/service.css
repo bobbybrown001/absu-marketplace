@@ -5,7 +5,9 @@
     list-style: none;
 }
 
-/* Styling navbar */
+/**************
+Styling navbar
+**************/
 .navbar {
     transition: background-color 0.8s ease;
 }

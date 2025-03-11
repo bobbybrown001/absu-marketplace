@@ -1,0 +1,199 @@
+/*************************
+Light - Dark Mood Style
+*************************/
+.mode-container{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 4.6rem;
+    margin-left: 25px;
+}
+
+.theme-toggler{
+    position: relative;
+    width: 60px;
+    height: 30px;
+}
+
+/* Hidden Checkbox */
+.theme-toggler #theme-checkbox {
+    display: none;
+}
+
+/* Toggle Label */
+.toggle-label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #ddd;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.4s;
+}
+
+/* Sun & Moon Icons */
+#light, #dark {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+#light{
+    left: 7px;
+}
+#dark{
+    right: 6px; 
+    opacity: 0;
+    color: #212529;
+}
+
+/* Toggle Ball */
+.toggle-ball {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.4s, background 0.4s;
+}
+
+/* When Checkbox is Checked */
+#theme-checkbox:checked + .toggle-label {
+    background: #444;
+}
+
+#theme-checkbox:checked + .toggle-label .toggle-ball {
+    transform: translateX(30px);
+    background: white;
+}
+
+#theme-checkbox:checked + .toggle-label #light {
+    opacity: 0;
+}
+
+#theme-checkbox:checked + .toggle-label #dark {
+    opacity: 1;
+}
+
+/***********************************
+:root DarkMode - LightMood
+************************************/
+:root {
+    --lightMode-background: white;
+    --lightMode-text: #212529;
+    --darkMode-background: rgb(18, 18, 36);
+    --darkMode-text: white;
+    --darkMode-transition: all .40s ease;
+}
+
+
+/**********
+DarkMode
+***********/
+body.darkMode{
+    background-color: var(--darkMode-background);
+    color: var(--darkMode-text);
+    transition: transform 0.4s, background 0.4s;
+}
+
+.lightMode{
+    background-color: var(--lightMode-background);
+}
+
+/***********************
+sidebar light - dark
+***********************/
+.darkMode .sidebar{
+    background-color: rgb(18, 18, 36);
+}
+.darkMode .sidebar a{
+    color: #999999;
+}
+.darkMode .sidebar a:hover{
+    color: antiquewhite;
+    transition: .2s ease;
+}
+
+
+/***********************
+dashboard light - dark
+***********************/
+.darkMode header h1{
+    color: white;
+}
+.darkMode .card{
+    background-color: rgb(18, 18, 36);
+}
+.darkMode .first_section .middle{
+    color: white;
+}
+.darkMode .first_section small{
+    color: rgb(158, 154, 154);
+}
+.darkMode .featured_listings h1{
+    color: white;
+}
+.darkMode .featured_listings th{
+    background-color: rgb(18, 18, 36);
+    color: white;
+}
+.darkMode .featured_listings td{
+    background-color: rgb(18, 18, 36);
+    color: white;
+}
+.darkMode ::-webkit-scrollbar{
+    background-color: rgb(18, 18, 36);
+}
+.darkMode .recent-charts h2{
+    color: white;
+}
+.darkMode .charts_updates b{
+    color: white;
+}
+
+
+/* mege */
+.darkMode .conversations{
+    background-color: rgb(18, 18, 36);
+}
+.darkMode .conversations .head{
+    background-color: rgb(18, 18, 36);
+}
+.darkMode .chat-box{
+    background-color: rgb(18, 18, 36);
+}
+.darkMode .chat-box .profile{
+    color: #212529;
+}
+.darkMode .input-container span{
+    color: rgb(18, 18, 36);
+}
+.darkMode .input-container button{
+    background-color: rgb(18, 18, 36);
+}
+.darkMode .conversations .chat-list li:hover{
+    background-color:rgb(29, 29, 56);
+    color: white;
+}
+
+
+@media (max-width: 989px) {
+    .darkMode .offcanvas a:hover{
+        color:  rgb(190, 186, 186);
+        transition: .1s ease;
+    }
+    /**********************
+    Dark Mood Style
+    ***********************/
+    .darkMode .offcanvas{
+        background-color: var(--darkMode-background);
+    }
+    .darkMode .offcanvas ul li a{
+        color: white;
+    }
+}

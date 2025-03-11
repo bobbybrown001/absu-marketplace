@@ -25,7 +25,7 @@
         <nav class="navbar navbar-expand-lg navbar-light justify fixed-top">
             <div class="container">
                 <img src="./asset/image/logo.png" alt="" width="50px">
-                <a class="navbar-brand text-danger fs-4 fw-bolder" href="#" id="iv">Absu Marketplace</a>
+                <a class="navbar-brand text-danger fs-4 fw-bolder" href="#">Absu Marketplace</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -35,21 +35,19 @@
                             <a class="nav-link me-3 " aria-current="page" href="./index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link me-3" href="./service.html">Services</a>
+                            <a class="nav-link me-3" href="#">About</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Register
-                            </a>
-                            <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./login.php">Login</a></li>
-                            <li><a class="dropdown-item" href="./register.php">Create an account</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="./becomeanagent.php">Become a agent</a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link me-3" href="./service.html">Services</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-primary" href="./login.php">Login</a>
+                        </li>
+                        <li class="nav-item ms-0 ms-sm-3 mt-2 mt-sm-0">
+                            <a class="btn btn-success" href="./register.php">Register</a>
                         </li>
                     </ul>
                 </div>
@@ -93,42 +91,41 @@
             </div>
         </div>
 
-            <!-- Form to collect users complain-->
-            <div class="form-container bg-light">
-                <form action="" method="">
-                    <div class="text-center" id="form-text">
-                        <h2 class="text-danger">Leave us a message</h2>
-                        <h6>We will get back to you</h6>
-                    </div>
-                    <!-- form input  -->
-                    <div>
-                        <input type="text" name="fullname" class="form-control" placeholder="Full Name">
-                    </div>
-                    <div>
-                        <input type="email" name="email" class="form-control" placeholder="Email">
-                    </div>
-                    <div>
-                        <input type="tel" name="phone"  class="form-control" placeholder="Phone Number">
-                    </div>
-                    <div>
-                        <input type="text" name="subject" class="form-control" placeholder="Subject">
-                    </div>
-                    <div>
-                        <textarea id="message" name="message" rows="4" cols="50"  class="form-control" placeholder="Type your message here..."></textarea>
-                    </div>
-                    <div class="button">
-                        <input type="submit"  class="form-control text-light" value="SEND MESSAGE">
-                    </div>
-                </form>
-            </div>
+        <!-- Form to collect users complain-->
+        <div class="form-container bg-light">
+            <form action="" method="">
+                <div class="text-center" id="form-text">
+                    <h2 class="text-danger">Leave us a message</h2>
+                    <h6>We will get back to you</h6>
+                </div>
+                <!-- form input  -->
+                <div>
+                    <input type="text" name="fullname" class="form-control" placeholder="Full Name">
+                </div>
+                <div>
+                    <input type="email" name="email" class="form-control" placeholder="Email">
+                </div>
+                <div>
+                    <input type="tel" name="phone"  class="form-control" placeholder="Phone Number">
+                </div>
+                <div>
+                    <input type="text" name="subject" class="form-control" placeholder="Subject">
+                </div>
+                <div>
+                    <textarea id="message" name="message" rows="4" cols="50"  class="form-control" placeholder="Type your message here..."></textarea>
+                </div>
+                <div class="button">
+                    <input type="submit"  class="form-control text-light" value="SEND MESSAGE">
+                </div>
+            </form>
+        </div>
 
-            <!-- Social Icons -->
-            <div class="social text-center mt-5">
-                <a href="#" class="text-dark mr-3 me-3"  style="font-size: 20px;"><i class="fab fa-facebook-f fs-3"></i></a>
-                <a href="#" class="text-dark mr-3 me-3"  style="font-size: 22px;"><i class="fab fa-instagram fs-3"></i></a>
-                <a href="#" class="text-dark mr-3 me-3"  style="font-size: 22px;"><i class="fab fa-whatsapp fs-3"></i></a>
-            </div>
-        
+        <!-- Social Icons -->
+        <div class="social text-center mt-5">
+            <a href="#" class="text-dark mr-3 me-3"  style="font-size: 20px;"><i class="fab fa-facebook-f fs-3"></i></a>
+            <a href="#" class="text-dark mr-3 me-3"  style="font-size: 22px;"><i class="fab fa-instagram fs-3"></i></a>
+            <a href="#" class="text-dark mr-3 me-3"  style="font-size: 22px;"><i class="fab fa-whatsapp fs-3"></i></a>
+        </div>
     </div>
 
 
@@ -142,7 +139,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 mt-3">
-                    <div class="">
+                    <div>
                         <img src="./asset/image/WhatsApp_Image_2024-12-11_at_1.48.46_PM-removebg-preview.png" alt="" width="80px">
                         <h4 class="text-danger fw-bolder">Absu Marketplace</h4>
                         <h6 class="moto"></h6>
@@ -156,18 +153,18 @@
                 <div class="col-md-3 mt-3">
                     <h5 class="fw-bolder">Quick Links</h5>
                     <ul class="list-unstyled  fw-semibold">
-                        <li><a href="#" class="text-dark">Home</a></li>
-                        <li><a href="#" class="text-dark">Services</a></li>
-                        <li><a href="#" class="text-dark">Login</a></li>
-                        <li><a href="#" class="text-dark">Become a user</a></li>
-                        <li><a href="#" class="text-dark">Terms & Conditions</a></li>
+                        <li><a href="./index.html" class="text-dark">Home</a></li>
+                        <li><a href="./service.html" class="text-dark">Services</a></li>
+                        <li><a href="./login.php" class="text-dark">Login</a></li>
+                        <li><a href="./register.php" class="text-dark">Become a user</a></li>
+                        <li><a href="./terms&condition.html" class="text-dark">Terms & Conditions</a></li>
                         <li><a href="#" class="text-dark">Customer Support</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 mt-3" id="foot">
                     <h5 class="fw-bolder">Partner with Us</h5>
                     <ul class="list-unstyled  fw-semibold">
-                        <li><a href="#" class="text-dark">Register as an agent</a></li>
+                        <li><a href="./agent_register.php" class="text-dark">Register as an agent</a></li>
                         <li><a href="#" class="text-dark">Joint Ventures</a></li>
                         <li><a href="#" class="text-dark">Corporate Partnerships</a></li>
                     </ul>

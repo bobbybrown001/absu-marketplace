@@ -9,21 +9,50 @@ $success = "";
 $error = array();
 
 //if form is submitted
-if(isset($_POST['login'])){
-    $email = mysqli_real_escape_string($connection, $_POST['email']);
-    $pass = mysqli_real_escape_string($connection, $_POST['password']);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   
+    $email = filter_var(mysqli_real_escape_string($connection, trim($_POST['email'])), FILTER_SANITIZE_EMAIL);
+    $password = mysqli_real_escape_string($connection, trim($_POST['password']));
     
-    //lets check for erros in the fields
-    if(empty($email)){
-        array_push($error, "email cannot be empty");
+    // Validation email
+    function validateEmail($email, &$error) {
+        if (empty($email)) {
+            $error['email'] = "Email is required";
+        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $error['email'] = "Invalid email format";
+        } elseif (!preg_match('/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/', $email)) {
+            $error['email'] = "Invalid email address";
+        } elseif (strpos($email, ' ') !== false) {
+            $error['email'] = "Email must not contain spaces";
+        }
     }
-    if(empty($pass)){
-        array_push($error, "password cannot be empty");
+
+    // Validation password
+    function validatePassword($password, &$error) {
+        if (empty($password)) {
+            $error['password'] = "Password is required";
+        } elseif (strlen($password) < 6) {
+            $error['password'] = "Password must be at least 6 characters long";
+        } elseif (!preg_match('#[0-9]+#', $password)) {
+            $error['password'] = "Password must contain at least one number";
+        } elseif (!preg_match('#[A-Z]+#', $password)) {
+            $error['password'] = "Password must contain at least one uppercase letter";
+        } elseif (!preg_match('#[a-z]+#', $password)) {
+            $error['password'] = "Password must contain at least one lowercase letter";
+        } elseif (!preg_match('#\W+#', $password)) {
+            $error['password'] = "Password must contain at least one special character";
+        } elseif (strpos($password, ' ') !== false) {
+            $error['password'] = "Password must not contain spaces";
+        }
     }
+
+    // Execute validations
+    validateEmail($email, $error);
+    validatePassword($password, $error);
+
     
     /*if there are no errors in the form then 
     fetch the user data from the database */
-    
     if(count($error)==0){
         //check for user data 
         $sql = "SELECT * FROM users where email='$email' "; 
@@ -34,25 +63,26 @@ if(isset($_POST['login'])){
 
             while($row = mysqli_fetch_assoc($query)){
                 //encrypt password verification
-                if (password_verify($pass, $row['password'])) {
-                    echo 'Password is valid!';
+                if (password_verify($password, $row['password'])) {
+
                     //add user details to a session and send user to dashboard
                     $_SESSION['fullname'] = $row['fullname'];
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['userid'] = $row['id'];
-                    header("location: user/user-dashboard.html");
+                    header("location: ./user/user_dashboard.php");
                 } else {
-                    array_push($error, "Invalid password");
+                    $error['error_message'] = "Invalid password";
                 }
             }
         }else{
-            $success = "<span class='text-danger'>Invalid email or password</span>";
+            // Check if email is valid
+            $error['error_message'] = "Invalid email or password";
         }
     }
 }
 
+$connection->close();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -66,120 +96,59 @@ if(isset($_POST['login'])){
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- font awsome -->
+    <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
+    
+    <!-- Google Material Icons CDN -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
     
     <title>Login</title>
 </head>
 <body>
-    <div class="overflow-x-hidden overflow-y-auto">
+<div class="overflow-x-hidden overflow-y-auto">
     
-        <!-- User Login -->
-        <div class="collection  col-9 col-md-6 col-lg-4" id="userContainer">
-            <form class="login-form" method="post" action="login.php">
-                <h1 class="text-center text-danger fw-bold">LOGIN AS</h1>
+    <!-- Navbar -->
+    <?php include('./include/nav_bar.php') ?>
 
-                <?php echo $success; ?>
-                <?php
-                    foreach($error as $errors){
-                        echo "<p class='text-danger text-center'>".
-                            $errors . "<br> </p>";
-                    }
-                ?>
-
-                <!-- Login as User or Agent -->
-                <ul class="nav nav-underline justify-content-center" id="login-User-Agent">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark active" href="#">USER</a>
-                    </li>
-                    <li class="nav-item" id="agentLogin">
-                        <a class="nav-link text-dark" href="#">AGENT</a>
-                    </li>
-                </ul>
-
-                <!-- Email -->
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email address: </label>
-                    <input type="email" class="form-control" name="email" id="email" aria-describedby="email">
-                </div>
-
-                <!-- Password -->
-                <div class="mb-2">
-                    <label for="password" class="form-label">Password: </label>
-                    <input type="password" class="form-control" name="password" id="password">
-                </div>
-
-                <!-- Forget Password -->
-                <div class="mb-3">
-                    <a href="#" class="list-style-none" id="forget-password">Forget Password?</a>
-                </div>
-
-                <!-- Login button -->
-                <button type="submit" name="login" class="btn btn-danger mb-2">LOGIN</button>
-
-                <!-- Not yet Registered -->
-                <div class="text-center mt-3">
-                    <a href="./register.php" class="text-dark list-style-none " id="not-yet-register">Not yet registered? <span class="text-primary">Register</span></a>
-                </div>
-            </form>
-        </div>
-
-
-
-
-        <!-- Agent login -->
-        <div class="collection" id="agentContainer" style="display: none;">
-            <form class="login-form" method="post" action="login.php">
-                <h1 class="text-center text-danger fw-bold">LOGIN AS</h1>
-
-                <?php echo $success; ?>
-                <?php
-                    foreach($error as $errors){
-                        echo "<p class='text-danger text-center'>".
-                            $errors . "<br> </p>";
-                    }
-                ?>
-
-                <!-- Login as User or Agent -->
-                <ul class="nav nav-underline justify-content-center" id="login-User-Agent">
-                    <li class="nav-item" id="userLogin">
-                        <a class="nav-link text-dark" href="#">USER</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark active" href="#">AGENT</a>
-                    </li>
-                </ul>
-
-                <!-- Email -->
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email address: </label>
-                    <input type="email" class="form-control" id="email" name="email" aria-describedby="email">
-                </div>
-
-                <!-- Password -->
-                <div class="mb-2">
-                    <label for="password" class="form-label">Password: </label>
-                    <input type="password" class="form-control" id="password" name="password">
-                </div>
-
-                <!-- Forget Password -->
-                <div class="mb-3">
-                    <a href="#" class="list-style-none" id="forget-password">Forget Password?</a>
-                </div>
-
-                <!-- Login button -->
-                <button type="submit" name="agentlogin" class="btn btn-danger mb-2">LOGIN AS AGENT</button>
-
-                <!-- Not yet Registered -->
-                <div class="text-center mt-3">
-                    <a href="./register.php" class="text-dark list-style-none" id="not-yet-register">Not yet registered? <span class="text-primary">Register</span></a>
-                </div>
-            </form>
-        </div>
-    </div>
+    <!-- Login as user -->
+    <div class="login-box">
+        <h2 style="color: #8e2de2;">LOGIN</h2>
         
+        <form method="POST" action="login.php" autocomplete="off">
 
-<!-- javascript link-->
-<script src="./javascript/login.js"></script>
+            <!-- error message -->
+            <?php if(isset($error['error_message'])): ?>
+                <div class="text-danger " style="margin-top: -13px; height: 1.7rem; font-size:0.9rem"><?php echo $error['error_message']; ?></div>
+            <?php endif; ?>
+
+            <!-- Email -->
+            <div class="input-group">
+                <span class="input-group-text"><i class="fa-solid fa-envelope text-light"></i></span>
+                <input type="text" class="form-control" name="email" placeholder="Email" value="<?php echo $email; ?>">
+            </div>
+            <!-- Email error message -->
+            <?php if(isset($error['email'])): ?>
+                <div class="text-danger text-start" style="margin-top: -13px; height: 1.7rem; font-size:0.9rem"><?php echo $error['email']; ?></div>
+            <?php endif; ?>
+
+            <!-- Password -->
+            <div class="input-group">
+                <span class="input-group-text"><i class="fa-solid fa-lock text-light"></i></span>
+                <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <!-- password error message -->
+            <?php if(isset($error['password'])): ?>
+                <div class="text-danger text-start" style="margin-top: -13px; height: 1.7rem; font-size:0.9rem"><?php echo $error['password']; ?></div>
+            <?php endif; ?>
+
+            <a href="#" class="forgot-pass">Forgot password?</a>
+
+            <!-- submit button -->
+            <input type="submit" class="login-btn mt-3" value="Login" name="login">
+        </form>
+        <p class="signup-link">Don't have an account? <a href="./register.php">Sign up</a></p>
+    </div>
+</div>
+
 </body>
 </html>

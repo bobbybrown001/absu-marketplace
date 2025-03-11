@@ -5,7 +5,9 @@
     list-style: none;
 }
 
-/* Styling navbar */
+/**************
+Styling navbar
+***************/
 .navbar {
     transition: background-color 0.8s ease;
 }
@@ -75,7 +77,7 @@ Styling Agent Section
 /********************
 Why Become an Agent
 ********************/
-.why-become-agent .become-agent{
+.why-join-us .join-us{
     display: flex;
     margin-bottom: 8px;
     gap: 1rem;

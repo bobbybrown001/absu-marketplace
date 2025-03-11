@@ -7,11 +7,12 @@
 }
 
 body{
-    background-color: white;
+    background: linear-gradient(90deg, #ff4e95, #8e2de2);
 }
 
 /* form container */
 .collection{
+    margin-top: 150px !important;
     background-color: white;
     width: 600px;
     padding: 1.5rem;

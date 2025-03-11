@@ -8,12 +8,10 @@
     appearance: none;
 }
 
-body{
+#container{
     font-family: "Poppins", serif !important;
     width: 100vw;
     height: 100vh;
-    overflow-x: hidden;
-    user-select: none;
     display:flex;
     flex-direction: column;
 }
@@ -21,21 +19,12 @@ body{
 /************ 
 Content Area 
 *************/
-.container {
-    margin-top: 4rem !important;
+.maincontainer {
+    padding:20px 20px;
+    margin-left: 12rem;
 }
 
 
-@media (max-width: 989px) {
-    #container{
-        margin-left: 0;
-    }
-    .container {
-        margin-left: 0;
-        padding: 0 13px;
-        margin-top: 50px;
-    }
-    .container h2{
-        margin-top: 50px;
-    }
+#productForm{
+    display: block;
 }

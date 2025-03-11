@@ -8,7 +8,7 @@ $dbpass = "";
 $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
 if($connection){
-    echo "Connected";
+    // echo "Connected";
 }else{
     echo "Failed to connect" . mysqli_connect_error();
 }

@@ -8,12 +8,12 @@
     appearance: none;
 }
 
-body{
+#container{
     font-family: "Poppins", serif !important;
     width: 100vw;
     height: 100vh;
-    overflow-x: hidden;
-    user-select: none;
+    display:flex;
+    flex-direction: column;
 }
 
 
@@ -21,8 +21,8 @@ body{
 Content Area 
 *************/
 .maincontainer {
+    margin-left: 12rem;
     display: grid;
-    margin-left: 250px;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 100vh;
     height: 100vh;
@@ -34,6 +34,7 @@ Conversations
 ***************/
 
 .conversations {
+    margin-top: -15px;
     background: #fff;
     display: grid;
     grid-template-rows: auto 1fr;
@@ -42,7 +43,7 @@ Conversations
 
 .head {
     padding: 15px;
-    background: #007BFF;
+    background: rgb(78, 223, 228);
     color: white;
 }
 
@@ -180,18 +181,28 @@ button {
 /****************
 Responsive Grid
 *****************/
-@media (max-width: 950px) {
+
+@media (max-width: 1189px) {
+    .maincontainer{
+        width:auto !important;
+        margin-left: 6rem;
+    }
+}
+
+
+@media (max-width:  989px) {
+    #container{
+        margin-left: 0;
+    }
     .maincontainer {
-        /* margin-left: 0 !important;  */
-    }
+        width: 100%;
+        display:grid;
+        grid-template-columns: 100%;
 
-    .conversations{
-        width: 100vw;
-        height: 100vh;
-    }
-
-    /* chat box */
-    .chat-box {
+        margin-left: 0;
+        padding: 0;
+        margin-top: 50px;
+    }.chat-box {
         display: none;
-    }   
+    }
 }

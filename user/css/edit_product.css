@@ -1,0 +1,61 @@
+*{
+    border: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    appearance: none;
+}
+
+body{
+    font-family: "Poppins", serif !important;
+}
+
+/************ 
+Content Area 
+*************/
+.maincontainer {
+    padding:20px 20px;
+    margin-left: 12rem;
+}
+
+.container{
+    padding: 20px;
+}
+
+input::placeholder{
+    color: blue;
+    font-style: italic;
+    font-weight: 300;
+}
+textarea::placeholder{
+    color: blue;
+    font-style: italic;
+    font-weight: 300;
+}
+select option{
+    color: blue;
+    font-style: italic;
+    font-weight: 300;
+}
+select{
+    color: blue;
+    font-style: italic;
+    font-weight: 100;
+}
+
+
+
+@media (max-width: 989px) {
+    #container{
+        margin-left: 0;
+    }
+    .maincontainer {
+        margin-left: 0;
+        padding: 0 13px;
+        margin-top: 50px;
+    }
+}
+
+

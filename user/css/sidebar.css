@@ -3,41 +3,49 @@ Sidebar for Large Screens
 **********************/
 .sidebar {
     height: 100vh;
-    width: 250px;
+    width: 12rem;
     position: fixed;
     z-index: 1100;
     left: 0;
     top: 0;
-    background-color: #dc3545;
+    background-color:  rgb(18, 18, 36);
+    border-right: 2px solid gray;
+    transition: .2s ease-in;
 }
 
 /* Brand Name for Large Screens */
-.sidebar .top .logo h3{
-    font-weight: bold;
-    text-align: center;
-    margin-top: 10px; 
+.sidebar .top .logo{
+    display: flex;
+}
+.sidebar .top .logo img{
+    width: 3rem;
+    height: 3rem;
+}
+
+.sidebar .top .logo h5{
+    font-family: "Gochi Hand", serif;
+    font-weight: 700;
+    font-size:1.4rem;
+    color: #dc3545;
+    margin-bottom: 30px;
 }
 
 /* sidebar links */
 .sidebar ul{
-    gap: 1rem;
-    margin-top: 40px;
+    gap: 1.2rem;
 }
 
-
-.sidebar ul li a {
-    color: white;
-    padding: 4px 5px;
-    gap: 1rem;
+.sidebar ul li a{
+    display: flex;
+    gap: 1rem; 
+    font-size: 1rem;
+    color: #999999;
     transition: all .1s ease-in;
     text-decoration: none;
-    display: flex;
 }
 
-/* sidebar links icons */
-.sidebar a span{
-    font-size: 1.6rem;
-    transition: all .1s ease-in;
+.sidebar ul li a h4{
+    font-size: 1.3rem;
 }
 
 /* sidebar links icons last-child(logout) */
@@ -48,312 +56,133 @@ Sidebar for Large Screens
 }
 
 /* .sidebar links active */
-.sidebar a.active{
-    color: white;
-    margin-left: 0px;
-    border-left: 6px solid  #6c757d;
+.sidebar a.active span{
+    /* color: rgb(238, 84, 28); */
+    color: #dc3545;
 }
-
-/* .sidebar before links active */
-.sidebar a.active::before{
-    content: '';
-    width: 6px;
-    height: 100%;
-}
-
 
 /* .sidebar hover icons  */
-.sidebar a:hover span{
-    margin-left: 1rem;
-    transition: .4s ease;
+.sidebar a:hover{
+    color: antiquewhite;
+    transition: .2s ease;
 }
 
 /* .sidebar message msg_count  */
 .sidebar a span.msg_count{
     background-color: red;
     color: white;
-    padding: 2px 5px;
-    font-size: 11px;
+    padding: 2px 4px;
+    font-size: 10px;
     position: absolute;
-    border-radius: 25%;
-    margin-left: 0.2rem;
+    border-radius: 38%;
 }
 
 
-/***********************************
-:root DarkMode - LightMood
-************************************/
-:root {
-    --lightMode-background: white;
-    --lightMode-text: #212529;
-    --darkMode-background: rgb(18, 18, 36);
-    --darkMode-text: white;
-    --darkMode-transition: all .40s ease;
+/****************************
+Media when the screen moves
+****************************/
+.toggle-background {
+    display: none;
+}
+.offcanvas {
+    display: none;
 }
 
-.sidebar ul .theme-toggler{
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 6rem;
-    margin-left: 25px;
+@media (max-width: 1189px) {
+    .sidebar{
+        width: 6rem;
+        transition: .2s ease-in;
+    }
+    .sidebar .top .logo h5{
+        display: none;
+        margin-bottom: 20px;
+    }
+    .sidebar .top .logo img{
+        margin-bottom: 30px;
+    }
+    .sidebar ul li a h4{
+        display: none;
+    }
+    .sidebar ul li a span{
+        font-size: 28px;
+        margin-left: 10px;
+    }
+    .mode-container{
+        margin-left: 0 !important;
+    }
 }
-
-/**********************************************
-light mode theme toggler for light and dark icons
-************************************************/
-.theme-toggler{
-    display: flex;
-    margin-right: 1.9rem;
-    background-color: rgb(18, 18, 36);
-    padding: 7px;
-    border-radius: 30px;
-}
-
-.theme-toggler #dark_mode span{
-    padding: 0.3rem;
-    color: white;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.5rem;
-    font-weight: 500;
-    border-radius: 50%;
-}
-
-.theme-toggler #light_mode span{
-    border-radius: 50%;
-    background-color: white;
-    color: rgb(18, 18, 36);
-    font-size:1.8;
-    padding: 0.3rem;
-    cursor: pointer;
-}
-
-
-/***********************************
-DarkMode - LightMood using javaScript
-************************************/
-
-.darkMode{
-    background-color: var(--darkMode-background);
-    color: var(--darkMode-text);
-}
-
-.lightMode{
-    background-color: var(--lightMode-background);
-}
-
-/* user dashboard light - dark*/
-.darkMode .sidebar{
-    background-color: rgb(18, 18, 36);
-    color: white;
-}
-.darkMode .sidebar a{
-    color: white;
-}
-.darkMode .sidebar a.active{
-    color:blue;
-}
-.darkMode .sidebar a:hover{
-    color:blue;
-}
-.darkMode .right h2{
-    color:white;
-}
-.darkMode .sidebar{
-    background-color: var(--darkMode-background);
-}
-.darkMode .sidebar a.active{
-    color: var(--darkMode-text);
-}
-
-/**********************************************
-dark mode theme toggler for light and dark icons
-************************************************/
-.darkMode .theme-toggler{
-    background-color: white;
-}
-
-.darkMode .theme-toggler #light{
-    /* background-color: white; */
-    color: rgb(18, 18, 36);
-}
-.darkMode .theme-toggler #dark{
-    background-color: rgb(18, 18, 36);
-    color: white;
-    border-radius: 50%;
-    font-size:1.8;
-    padding: 0.3rem;
-    cursor: pointer;
-}
-
-
-/* mege */
-.darkMode .conversations{
-    background-color: rgb(18, 18, 36);
-}
-.darkMode .conversations .head{
-    background-color: rgb(18, 18, 36);
-}
-.darkMode .chat-box{
-    background-color: rgb(18, 18, 36);
-}
-.darkMode .chat-box .profile{
-    color: #212529;
-}
-.darkMode .input-container span{
-    color: rgb(18, 18, 36);
-}
-.darkMode .input-container button{
-    background-color: rgb(18, 18, 36);
-}
-.darkMode .conversations .chat-list li:hover{
-    background-color:rgb(29, 29, 56);
-    color: white;
-}
-
-
-
-
-
-
-
-
 
 /****************************
 Media  query for mobile phone
 ****************************/
-
-
-@media (max-width: 992px) {
+@media (max-width: 989px) {
     .sidebar {
         display: none;
     }
-    .offcanvas{
-        background-color: white;
+    /*****************
+    offcanvas Nav Bar
+    ******************/
+    .toggle-background{
+        display:block;
+        background-color: rgb(18, 18, 36);
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        z-index: 1;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
     }
-    .offcanvas-logo{
-        font-weight: bolder;
-        font-size:1.7rem;
-        text-align: center;
-        margin-top: 10px; 
+    .toggle-background h5{
+        font-family: "Gochi Hand", serif;
+        margin-right: 50px;
+        font-size: 1.4rem;
+    }
+    .hamburger{
+        cursor: pointer;
+        color: white;
+    }
+    .offcanvas .offcanvas-header h5{
+        font-family: "Gochi Hand", serif;
+        font-weight: 1000;
+        font-size:1.5rem;
+        color: #dc3545;
+    }
+    .offcanvas ul li a{
+        display: flex;
+        gap: 1.2rem; 
+        font-size: 1rem;
     }
     .offcanvas ul{
         gap: 1rem;
     }
-    .offcanvas ul li a {
-        color: #343a40;
-        padding: 4px 5px;
-        gap: 1rem;
+    .offcanvas ul li a{
+        display: flex;
+        gap: 1.2rem; 
+        font-size: 1rem;
+        color: #212529;
         transition: all .1s ease-in;
         text-decoration: none;
-        display: flex;
     }
-    .offcanvas a span{
-        font-size: 1.6rem;
-        transition: all .1s ease-in;
-    }
-    .offcanvas li:last-child{
+    .offcanvas ul li:last-child{
         position: absolute;
         bottom: 1rem;
         width: 100%;
     }
-    .offcanvas a.active{
-        color:  #343a40;
-        margin-left: 0px;
-        border-left: 6px solid  #6c757d;
+    .offcanvas a.active span{
+        color: #dc3545;
     }
-    .offcanvas a.active::before{
-        content: '';
-        width: 6px;
-        height: 100%;
-    }
-    .offcanvas a:hover span{
-        margin-left: 1rem;
-        transition: .4s ease;
+    .offcanvas a:hover{
+        color:  rgb(88, 88, 88);
+        transition: .1s ease;
     }
     .offcanvas a span.msg_count{
         background-color: red;
         color: white;
-        padding: 2px 5px;
-        font-size: 11px;
+        padding: 2px 4px;
+        font-size: 10px;
         position: absolute;
-        border-radius: 25%;
-        margin-left: 0.2rem;
-    }
-    .navbar .container-fluid button{
-        background-color: white;
-    }
-    /***********************
-    dark mode and light dark
-    ************************/
-
-    /* light */
-    .lightMode{
-        background-color: var(--lightMode-background);
-    }
-    .offcanvas ul .theme-toggler{
-        position: absolute;
-        bottom: 0;
-        margin-bottom: 6rem;
-        margin-left: 25px;
-    }
-    .offcanvas .theme-toggler{
-        display: flex;
-        margin-right: 1.9rem;
-        background-color: rgb(18, 18, 36);
-        padding: 7px;
-        border-radius: 30px;
-    }
-    .offcanvas .theme-toggler #sm-light_mode span{
-        border-radius: 50%;
-        background-color: white;
-        color: rgb(18, 18, 36);
-        font-size:1.8;
-        padding: 0.3rem;
-        cursor: pointer;
-    }
-    .offcanvas .theme-toggler #sm-dark_mode span{
-        border-radius: 50%;
-        background-color: rgb(18, 18, 36);
-        color: white;
-        font-size:1.8;
-        padding: 0.3rem;
-        cursor: pointer;
-    }
-
-    /* dark */
-    .darkMode .offcanvas ul .theme-toggler{
-        position: absolute;
-        bottom: 0;
-        margin-bottom: 6rem;
-        margin-left: 25px;
-    }
-    .darkMode{
-        background-color: var(--darkMode-background);
-        color: var(--darkMode-text);
-    }
-    .darkMode .offcanvas{
-        background-color: var(--darkMode-background);
-    }
-    .darkMode .offcanvas .theme-toggler{
-        background-color: white;
-    }
-    .darkMode .offcanvas ul li a{
-        color: white;
-    }
-    .darkMode .offcanvas .theme-toggler #sm-light_mode span{
-        border-radius: 50%;
-        color: rgb(18, 18, 36);
-        font-size:1.8;
-        padding: 0.3rem;
-        cursor: pointer;
-    }
-    .darkMode .offcanvas .theme-toggler #sm-dark_mode span{
-        border-radius: 50%;
-        background-color: rgb(18, 18, 36);
-        color: white;
-        font-size:1.8;
-        padding: 0.3rem;
-        cursor: pointer;
+        border-radius: 38%;
     }
 }
+

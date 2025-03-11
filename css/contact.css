@@ -7,7 +7,9 @@
 }
 
 
-/* Styling navbar */
+/**************
+Styling navbar
+***************/
 .navbar {
     transition: background-color 0.8s ease;
 }
@@ -19,7 +21,9 @@
 
 
 
-/* contact */
+/********
+contact
+*********/
 .contact-container{
     margin-top: 160px;
 }
@@ -108,8 +112,6 @@ input:focus, textarea:focus {
 .button input:hover{
     background-color:#c03240;
 }
-
-
 
 
 /**********************************

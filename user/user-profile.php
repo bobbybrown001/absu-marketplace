@@ -1,3 +1,28 @@
+<?php
+session_start();
+
+// Include database connection file
+include("../config/config.php");
+
+// Redirect to login if not logged in
+if (!isset($_SESSION['userid'])) {
+    header('location: ../login.php');
+    exit();
+}
+
+// Get logged-in user's data
+$userId = $_SESSION['userid'];
+$query = "SELECT * FROM users WHERE id = $userId";
+$result = mysqli_query($connection, $query);
+
+if (!$result || mysqli_num_rows($result) == 0) {
+    echo "User not found.";
+    exit;
+}
+
+$user = mysqli_fetch_assoc($result);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,66 +48,62 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     
+    <!-- google fonts import - Gochi Hand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Titan+One&display=swap" rel="stylesheet">
+    
+    <!-- font awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
+
     <title> Profile </title>
 </head>
 <body>
-    <!-- nav.bar -->
-    <?php include ('./include/sidebar.php') ?>
+    <div class="overflow-x-hidden overflow-y-auto" id="container">
+        <!-- Nav Bar -->
+        <div class="sidenavbar">
+            <?php include ('./include/sidebar.php') ?>
+        </div>
 
-    <!-- Main Content -->
-    <div class="maincontainer">
-
-        <div class="content">
-
-            <div class="my-profile">
-                <h2>My Profile</h2>
-
-                <!-- icon -->
-                <a href="./settings.php">
-                    <span class="material-symbols-outlined">settings</span>
-                </a>
-            </div>
-
-
-            <div class="profile-container">
-
-                <!-- profile -->
-                <div class="profile" >
-                    <div class="profile-photo">
-                        <img src="../asset/image/image1.png" alt="">
-                    </div>
-                </div>
-
+        <!-- Main Content -->
+        <div class="maincontainer">
+            <h1>Profile</h1>
+            <!-- <h2 class="text-center me-5">My Profile</h2> -->
+            <div class="container my-5">
                 
-            
+                <div class="row justify-content-center">
 
-                <div class="details">
-                    
-                    <!-- Profile Information -->
-                    <div>
-                        <h3>Full Name</h3>
-                        <p>Bobby Brown</p>
+                    <!-- Profile Photo -->
+                    <div class="col-md-5 col-sm-12">
+                        <div class="profile-photo">
+                            <img src="../asset/image/image1.png" class="img-fluid" alt="Profile Photo">
+                        </div>
+                    </div>
 
-                        <h3>User Name</h3>
-                        <p>BobbyBrown001</p>
+                    <!-- Profile Details -->
+                    <div class="col-md-6 col-sm-12 mt-5 mt-md-0">
+                        <div class="details">
+                            <h3>Full Name</h3>
+                            <p><?php echo htmlspecialchars($user['fullname']); ?></p>
 
-                        <h3>Email</h3>
-                        <p>Bobby0Brown001@gmail.com</p>
+                            <h3>Username</h3>
+                            <p><?php echo htmlspecialchars($user['username']); ?></p>
 
-                        <h3>Phone</h3>
-                        <p>08082958171</p>
+                            <h3>Email</h3>
+                            <p><?php echo htmlspecialchars($user['email']); ?></p>
 
-                        <h3>Account type</h3>
-                        <p>User</p>
+                            <h3>Phone</h3>
+                            <p><?php echo htmlspecialchars($user['phone']); ?></p>
+
+                            <h3>Account Type</h3>
+                            <p>User</p>
+                        </div>
                     </div>
 
                 </div>
-
             </div>
-        
         </div>
     </div>
-
 
     <!-- javascript cdn -->
     <script src="./dark-lightmode.js"></script>
